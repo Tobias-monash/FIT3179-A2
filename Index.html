@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+    <style>
+        /* Add custom CSS styles for aesthetics */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #e6aaaa;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Country GDP Report</h1>
+        <p>Exploring Global Differences in GDP</p>
+    </header>
+
+    <div class="container">
+        <h2>Visualizations</h2>
+        <p>Here is a visualisation which depicts the GDP per Capita for the world:</p>
+        <div id="GDP_Per_Capita"></div>
+        
+
+        <h2>About the Report</h2>
+        <p>This visualisation aims to provide deep information into the reasons behind a countries GDP, such as
+            economic, education, life expectancy and other factors.</p>
+
+        <h2>Key Findings</h2>
+        <p>Some of the key findings from the report include:</p>
+        <ul>
+            <li>There is a correlation between continent and GDP.</li>
+            <li>There are a few outliers, such as Singapore, where the GDP varies vastly compared to the surrounding
+                region.</li>
+        </ul>
+
+        
+
+
+    </div>
+
+    <script type="text/javascript">
+        var specVis1 = "Map.vg.json";
+
+
+        vegaEmbed('#GDP_Per_Capita', specVis1, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+    </script>
+</body>
+
+</html>
