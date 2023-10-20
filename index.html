@@ -62,7 +62,11 @@
         <h2>Visualizations</h2>
         <p>Here is a visualisation which depicts the GDP per Capita for the world:</p>
         <div id="GDP_Per_Capita"></div>
-        
+        <div id="emoji"></div>
+        <div id="scatter"></div>
+        <div id="stripplot"></div>
+        <div id="barchart"></div>
+
 
         <h2>About the Report</h2>
         <p>This visualisation aims to provide deep information into the reasons behind a countries GDP, such as
@@ -82,12 +86,35 @@
     </div>
 
     <script type="text/javascript">
-        var specVis1 = "https://raw.githubusercontent.com/Tobias-monash/FIT3179-A2/main/JS/Map.vg.json";
-
-
+        var specVis1 = "js/Map.vg.json";
         vegaEmbed('#GDP_Per_Capita', specVis1, { "actions": false }).then(function (result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
+
+
+        var specVis2 = "js/BarChart.vg.json";
+        vegaEmbed('#barchart', specVis2, { "actions": false }).then(function (result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+
+        var specVis3 = "js/StripPlot.vg.json";
+        vegaEmbed('#stripplot', specVis3, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+
+        var specVis4 = "js/Emoji.vg.json";
+        vegaEmbed('#emoji', specVis4, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+
+        var specVis5 = "js/ScatterPlot.vg.json";
+        vegaEmbed('#scatter', specVis5, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
 
     </script>
 </body>

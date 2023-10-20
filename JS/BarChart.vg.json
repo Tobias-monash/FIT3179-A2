@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bar chart representing the top 5 most spoken languages in the world.",
+    "data": {
+      "url": "https://raw.githubusercontent.com/Tobias-monash/FIT3179-A2/main/JS/world-data-2023.csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "transform": [
+      {
+        "filter": "datum.language !== null && datum.language !== '' && datum.population !== null"
+      },
+      {
+        "aggregate": [
+          {"op": "sum", "field": "Population", "as": "total_population"},
+          {"op": "distinct", "field": "Country", "as": "country_count"}
+        ],
+        "groupby": ["Official language"]
+      },
+      {
+        "window": [{"op": "rank", "as": "rank"}],
+        "sort": [{"field": "total_population", "order": "descending"}]
+      },
+      {
+        "filter": "datum.rank <= 10"
+      }
+    ],
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "Official language", "type": "nominal", "axis": {"title": "Language"}},
+      "y": {
+        "field": "total_population",
+        "type": "quantitative",
+        "axis": {"title": "Number of Speakers (millions)"}
+      },
+      "color": {
+        "field": "Official language",
+        "type": "nominal",
+        "scale": {"scheme": "tableau10"},
+        "legend": null
+      },
+      
+      "tooltip": [
+        {
+          "field": "country_count",
+          "type": "quantitative",
+          "title": "Number of Countries"
+        },
+        {
+          "field": "total_population",
+          "type": "quantitative",
+          "title": "Total Speakers",
+          "format": ","
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 300, 
+"width": 400, 
+    "data": {
+      "url": "https://raw.githubusercontent.com/Tobias-monash/FIT3179-A2/main/JS/world-data-2023.csv",
+      "format": {
+        "type": "csv"
+      }
+    },
+    "transform": [
+      {
+        "filter": "isValid(datum['Infant mortality']) && datum['Infant mortality'] !== null && datum['Infant mortality'] !== '' && (datum['Country'] === 'Finland' || datum['Country'] === 'Iceland' || datum['Country'] === 'San Marino' || datum['Country'] === 'Slovenia' ||datum['Country'] === 'Japan' ||datum['Country'] === 'Central African Rep.' || datum['Country'] === 'Sierra Leone'||datum['Country'] === 'Somalia' || datum['Country'] === 'Chad'||datum['Country'] === 'Nigeria')"
+      },
+    
+    
+      {
+        "calculate": "datum.GDP / datum.Population",
+        "as": "GDP Per Capita"
+    }],
+    "mark": {"size": 80, "type": "circle"},
+    "encoding": {
+      "x": {
+        "aggregate": "mean",
+        "axis": {
+          "labelExpr": "datum.label == 0 ? '0' : datum.label == 45 ? '45' : '90'",
+          "labelFlush": false,
+          "values": [0, 45, 90]
+        },
+        "field": "Infant mortality",
+        "scale": {"domain": [0, 90]},
+        "title": "Infant Mortality"
+      },
+      "y": {"field": "Country", "sort": "x", "title": null},
+      "size": {
+        "field": "GDP Per Capita",
+        "type": "quantitative",
+        "scale": {
+          "type": "sqrt",
+          "range": [20, 1000], 
+          "domain": [0, 100000], 
+          "clamp": true 
+        },
+        "legend": {
+          "title": "GDP Per Capita",
+          "format": "$,.2r"         } 
+      },
+      
+      
+      "tooltip": [
+        {
+          "field": "Country",
+          "type": "nominal",
+          "title": "Country"
+        },
+        {
+          "field": "Infant mortality",
+          "type": "quantitative",
+          "title": "Infant Mortality"
+        },
+        {
+          "field": "GDP Per Capita",
+          "type": "quantitative",
+          "title": "GDP Per Capita",
+          "format": "$,.2f"
+        }
+      ]
+    }
+  }

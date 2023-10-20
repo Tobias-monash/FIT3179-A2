@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A scatterplot showing body mass and flipper lengths of penguins.",
+    "data": {
+        "url": "output.csv",
+        "format": {
+          "type": "csv"
+        }
+    },
+    "transform": [
+        {
+            "filter": "isValid(datum['Life expectancy']) && datum['Life expectancy'] !== null && datum['Life expectancy'] !== ''"
+        },
+        {
+            "calculate": "datum.GDP / datum.Population",
+            "as": "GDP Per Capita"
+        }
+    ],
+    "mark": "point",
+    "encoding": {
+      "x": {
+        "field": "Life expectancy",
+        "type": "quantitative",
+        "scale": {"zero": false}
+      },
+      "y": {
+        "field": "GDP Per Capita",
+        "type": "quantitative",
+        "scale": {"zero": false}
+      },
+      "color": {"field": "region", 
+      "type": "nominal",
+      "scale": {"scheme": "tableau10"}
+    },
+              
+      "tooltip": [
+        {
+          "field": "Country",
+          "type": "nominal",
+          "title": "Country"
+        },
+        {
+          "field": "GDP Per Capita",
+          "type": "quantitative",
+          "title": "GDP Per Capita",
+          "format": "$,.2f"
+        }
+      ]
+    }
+}
