@@ -15,7 +15,7 @@
             "min": 0,
             "max": 100000000,
             "step": 1000000,
-            "name":"Min pop:"
+            "name":"Mininum Population:"
         }
 }],
     "projection": { "type": "equalEarth" },
@@ -65,7 +65,7 @@
                     "scale": {
                         "type": "threshold",
                         "domain": [1000, 5000, 10000, 15000, 20000, 50000, 100000, 150000],
-                        "range": ["#FFFF3F", "#DDDF00", "#BFD200", "#80B918", "#55A630", "#2B9348", "#007F5F"]
+                        "range": ["#FFFF3F", "#DDDF00", "#BFD200", "#AACC00", "#80B918", "#55A630", "#2B9348", "#007F5F"]
                     }
                 },
                 "tooltip": [

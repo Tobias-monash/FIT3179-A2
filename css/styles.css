@@ -34,22 +34,17 @@ header {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 60px;
     color: #333;
     font-family:'Garamond' ;
 }
 
 h2 {
-    font-size: 30px;
-    color: #333;
-    font-family:'Garamond' ;
-}
-
-h3 {
     font-size: 24px;
     color: #333;
     font-family:'Garamond' ;
 }
+
 
 p {
     font-size: 16px;
@@ -64,6 +59,45 @@ img {
     margin-top: 20px;
 }
 
+.sing {
+    color: #55A630 ;
+    font-weight: bold;
+}
+
+.japkor {
+    color: #80B918 ;
+    font-weight: bold;
+}
+
+.venez {
+    color: #AACC00 ;
+    font-weight: bold;
+}
+
+.Africa {
+    color: #4c78a8 ;
+    
+}
+
+.Europe {
+    color: #e45756 ;
+    
+}
+
+.chin {
+    color: #9d755d ;
+    font-weight: bold;
+}
+
+.hin {
+    color: #72b7b2 ;
+    font-weight: bold;
+}
+
+.eng {
+    color: #f58518 ;
+    font-weight: bold;
+}
 
 #scatter {
     top: 0px;
@@ -103,7 +137,7 @@ img {
     text-align: justify;
 }
 .container-scatter h2 {
-    font-size: 30px;
+    font-size: 24px;
     color: #ffffff;
     font-family:'Garamond' ;
 }

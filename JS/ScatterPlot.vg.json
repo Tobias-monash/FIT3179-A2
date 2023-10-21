@@ -1,10 +1,10 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A scatterplot showing body mass and flipper lengths of penguins.",
-    "height": 300, 
+    "height": 330, 
     "width": 320,
     "data": {
-        "url": "output.csv",
+        "url": "https://raw.githubusercontent.com/Tobias-monash/FIT3179-A2/main/JS/output.csv",
         "format": {
           "type": "csv"
         }

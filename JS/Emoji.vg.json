@@ -3,6 +3,7 @@
     "config": { "view": { "stroke": "" } },
     "width": 750,
     "height": 50,
+    
     "data": {
       "url": "https://raw.githubusercontent.com/Tobias-monash/FIT3179-A2/main/JS/emoji.csv",
       "format": {
@@ -18,7 +19,7 @@
     ],
     "mark": { "type": "text", "baseline": "middle" },
     "encoding": {
-        "x": { "field": "number", "type": "ordinal", "axis": null, "scale": { "type": "band"} },
+        "x": { "field": "number", "type": "ordinal", "axis": {"title":"Continental Average Birth Rate per 1000 Population"}, "scale": { "type": "band"}  },
         "y": { "field": "child", "type": "nominal", "axis": null, "sort": null },
         "row": { "field": "region", "header": { "title": "" } },
         "text": { "field": "emoji", "type": "nominal" },
