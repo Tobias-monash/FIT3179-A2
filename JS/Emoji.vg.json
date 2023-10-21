@@ -4,7 +4,7 @@
     "width": 750,
     "height": 50,
     "data": {
-      "url": "emoji.csv",
+      "url": "https://raw.githubusercontent.com/Tobias-monash/FIT3179-A2/main/JS/emoji.csv",
       "format": {
         "type": "csv"
       }

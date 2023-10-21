@@ -65,7 +65,7 @@
                     "scale": {
                         "type": "threshold",
                         "domain": [1000, 5000, 10000, 15000, 20000, 50000, 100000, 150000],
-                        "range": ["#fef0d9", "#FFDA1F", "#FFC71F", "#FF7C1F", "#FF571F", "#FF311F", "#b30000"]
+                        "range": ["#FFFF3F", "#DDDF00", "#BFD200", "#80B918", "#55A630", "#2B9348", "#007F5F"]
                     }
                 },
                 "tooltip": [
@@ -79,7 +79,13 @@
                       "type": "quantitative",
                       "title": "GDP Per Capita",
                       "format": "$,.2f"
-                    }
+                    },
+                    {
+                        "field": "Population",
+                        "type": "nominal",
+                        "title": "Population",
+                        "format": ","
+                      }
                   ]
                 
             }

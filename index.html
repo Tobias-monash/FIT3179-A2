@@ -7,66 +7,71 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
     <!-- CSS file -->
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-    <style>
-        /* Add custom CSS styles for aesthetics */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
 
-        header {
-            background-color: #e6aaaa;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            margin-top: 20px;
-        }
 
-        h1 {
-            font-size: 24px;
-            color: #333;
-        }
-
-        p {
-            font-size: 16px;
-            color: #666;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-        }
-    </style>
 </head>
+
 
 <body>
     <header>
-        <h1>Country GDP Report</h1>
-        <p>Exploring Global Differences in GDP</p>
+        <h1>Global Fast Facts</h1>
+        <p style = "text-align: center;">Exploring Global Differences in GDP, Life Expectancy and Other Factors!</p>
     </header>
 
     <div class="container">
-        <h2>Visualizations</h2>
-        <p>Here is a visualisation which depicts the GDP per Capita for the world:</p>
+        
+        <div>
+            <h3>
+                Global GDP Per Capita
+            </h3>
+            <p>
+                The following map depicts the GDP per capita for each country. Several patterns and key points of information can be observed.
+                Firstly, it is evident that several regions have a higher GDP per capita than others, such as Europe, Australia, North America and Arabian peninsula standing out as outliers for being much higher than the surrounding regions. 
+                The Sub Saharan region of Africa also stands out, however, it is due to having a vastly lower GDP per capita than the rest of the globe. 
+                Several countries also stand out on their own for having a much higher GDP per capita than the surrounding countries, such as Singapore, Japan, South Korean and Venezuela.
+                <br><br>Use the slider beneath the map to filter the countries by population by the millions.
+            </p>
         <div id="GDP_Per_Capita"></div>
-        <div id="emoji"></div>
-        <div id="scatter"></div>
-        <div id="stripplot"></div>
-        <div id="barchart"></div>
 
+        <div class="container-scatter pure-g">
+            <div class="pure-u-2-3">
+                <div id="scatter" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-3">
+                <div class="description description-right">
+                    <h2>GDP Per Capita - Life Expectancy Correlation</h2>
+                    <p>It is evident that there is a positive correlation between GDP per capita and life expectancy. The higher the GDP per capita, the higher the life expectancy. There is also a distinct correlation between region and life expectancy, with Africa having a lower overall life expectancy on average, whereas Europe has a higher live expectancy and GDP per capita on average.
+                    
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="emoji"></div>
+        
+        
+        <div class="container-scatter pure-g">
+            <div class="pure-u-1-3">
+                <div class="description description-right">
+                    <h2>Gender Gap</h2>
+                    <p>It is evident that 
+                     
+                    </p>
+                </div>
+            </div>
+            <div class="pure-u-2-3">
+                <div id="stripplot" class="vis-container"></div>
+            </div>
+        </div>
+        
+        <div id="barchart"></div>
 
         <h2>About the Report</h2>
         <p>This visualisation aims to provide deep information into the reasons behind a countries GDP, such as

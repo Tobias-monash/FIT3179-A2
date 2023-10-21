@@ -1,6 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A bar chart representing the top 5 most spoken languages in the world.",
+    "height": 200, 
+    "width": 400,
     "data": {
       "url": "https://raw.githubusercontent.com/Tobias-monash/FIT3179-A2/main/JS/world-data-2023.csv",
       "format": {
